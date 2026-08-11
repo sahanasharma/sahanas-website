@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sahana Sharma — IBDP student, Data Science, Economics & Entrepreneurship, Machine Learning & AI Researcher." />
+  <title>Sahana Sharma | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Schoolbell&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#2e2c39;
+      --muted:#6f6a7b;
+      --paper:#fffdfa;
+      --pink:#ffd9e8;
+      --pink-2:#fff1f6;
+      --lav:#e7ddff;
+      --lav-2:#f5f1ff;
+      --mint:#dff7ea;
+      --mint-2:#f2fbf6;
+      --sky:#dceeff;
+      --sky-2:#f1f8ff;
+      --peach:#ffe6cc;
+      --yellow:#fff0aa;
+      --line:#ddd7e5;
+      --shadow:0 10px 30px rgba(80,67,100,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box; scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255,217,232,.38), transparent 22%),
+        radial-gradient(circle at 84% 12%, rgba(220,238,255,.44), transparent 23%),
+        radial-gradient(circle at 78% 72%, rgba(223,247,234,.35), transparent 26%),
+        var(--paper);
+      color:var(--ink);
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.68;
+    }
+
+    a{color:inherit;}
+    .chalk{font-family:"Patrick Hand","Chalkboard SE","Comic Sans MS",cursive;}
+    .doodle{font-family:"Schoolbell","Patrick Hand",cursive;}
+
+    .page{
+      width:min(1160px, calc(100% - 34px));
+      margin:0 auto;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:99;
+      padding:14px 0 8px;
+      backdrop-filter:blur(14px);
+      background:rgba(255,253,250,.82);
+      border-bottom:1px solid rgba(221,215,229,.55);
+    }
+    .nav-inner{
+      width:min(1160px, calc(100% - 34px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      font-family:"Patrick Hand",cursive;
+      font-size:1.55rem;
+      font-weight:700;
+      text-decoration:none;
+      letter-spacing:.02em;
+    }
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-size:.94rem;
+      font-weight:600;
+      color:#5f596d;
+    }
+    .nav-links a{
+      text-decoration:none;
+      padding:7px 10px;
+      border-radius:999px;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{background:var(--lav-2); transform:translateY(-1px);}
+
+    .hero{
+      min-height:82vh;
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:54px;
+      align-items:center;
+      padding:76px 0 56px;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"✦";
+      position:absolute;
+      left:-24px;
+      top:58px;
+      font-size:42px;
+      color:#cbb8ff;
+      transform:rotate(-12deg);
+    }
+    .hero::after{
+      content:"♡";
+      position:absolute;
+      right:9%;
+      bottom:55px;
+      font-size:38px;
+      color:#ffb9d2;
+      transform:rotate(8deg);
+      font-family:"Schoolbell",cursive;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      background:var(--yellow);
+      border:1.5px solid #e9d67c;
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:.9rem;
+      font-weight:700;
+      box-shadow:4px 4px 0 rgba(231,214,124,.26);
+      transform:rotate(-1deg);
+    }
+    h1{
+      margin:16px 0 10px;
+      font-family:"Patrick Hand",cursive;
+      font-size:clamp(4rem,8vw,7.2rem);
+      line-height:.88;
+      letter-spacing:-.03em;
+      font-weight:700;
+    }
+    .hero-sub{
+      font-family:"Patrick Hand",cursive;
+      font-size:clamp(1.25rem,2.2vw,1.75rem);
+      max-width:760px;
+      line-height:1.25;
+      color:#544c63;
+      margin:0 0 24px;
+    }
+    .hero-copy{
+      max-width:720px;
+      font-size:1.02rem;
+      color:#5f596d;
+      margin:0 0 28px;
+    }
+    .contact-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 16px;
+      border-radius:14px;
+      border:1.5px solid #d8d2e2;
+      text-decoration:none;
+      font-weight:700;
+      background:white;
+      box-shadow:4px 4px 0 rgba(216,210,226,.45);
+      transition:.18s ease;
+    }
+    .btn:hover{transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(216,210,226,.55);}
+    .btn.primary{background:var(--pink-2); border-color:#efcbd8;}
+
+    .portrait-wrap{
+      position:relative;
+      width:min(100%,420px);
+      margin-left:auto;
+      transform:rotate(1.6deg);
+    }
+    .portrait-card{
+      background:white;
+      padding:14px 14px 54px;
+      border:1.5px solid #ded8e5;
+      border-radius:10px;
+      box-shadow:var(--shadow), 10px 14px 0 rgba(231,221,255,.55);
+    }
+    .portrait-card img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      border-radius:4px;
+      filter:saturate(.98) contrast(1.01);
+    }
+    .portrait-caption{
+      font-family:"Schoolbell",cursive;
+      font-size:1.14rem;
+      text-align:center;
+      margin-top:14px;
+      color:#62596e;
+      transform:rotate(-.6deg);
+    }
+    .tape{
+      position:absolute;
+      width:90px;
+      height:28px;
+      background:rgba(255,240,170,.75);
+      top:-7px;
+      left:50%;
+      transform:translateX(-50%) rotate(-5deg);
+      border-left:1px solid rgba(215,199,125,.3);
+      border-right:1px solid rgba(215,199,125,.3);
+    }
+
+    section{padding:72px 0;}
+    .section-title{
+      margin:0 0 28px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .section-title h2{
+      font-family:"Patrick Hand",cursive;
+      font-size:clamp(2.5rem,5vw,4rem);
+      line-height:1;
+      margin:0;
+    }
+    .scribble{
+      height:7px;
+      width:90px;
+      border-top:3px solid #b9a7ea;
+      border-radius:50%;
+      transform:rotate(-2deg);
+    }
+
+    .profile-box{
+      border:1.5px dashed #cfc5de;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.72);
+      padding:28px;
+      box-shadow:var(--shadow);
+      font-size:1.04rem;
+    }
+
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+    .card{
+      background:white;
+      border:1.5px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      width:80px;
+      height:80px;
+      border:2px solid rgba(170,153,209,.2);
+      border-radius:50%;
+      top:-35px;
+      right:-25px;
+    }
+    .card h3{
+      font-family:"Patrick Hand",cursive;
+      margin:0;
+      font-size:1.8rem;
+      line-height:1.1;
+    }
+    .meta{
+      font-size:.92rem;
+      color:var(--muted);
+      margin:6px 0 14px;
+      font-weight:600;
+    }
+    .card ul{margin:0; padding-left:20px;}
+    .card li{margin:8px 0;}
+    .card.pink{background:var(--pink-2);}
+    .card.lav{background:var(--lav-2);}
+    .card.mint{background:var(--mint-2);}
+    .card.sky{background:var(--sky-2);}
+    .card.peach{background:#fff7ef;}
+
+    .mini-label{
+      display:inline-block;
+      font-family:"Schoolbell",cursive;
+      font-size:.96rem;
+      padding:4px 10px;
+      border-radius:999px;
+      background:white;
+      border:1px solid rgba(80,67,100,.16);
+      margin-bottom:10px;
+      transform:rotate(-1deg);
+    }
+
+    .timeline{
+      display:grid;
+      gap:20px;
+    }
+    .timeline-item{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:22px;
+      align-items:start;
+    }
+    .time{
+      font-family:"Patrick Hand",cursive;
+      font-size:1.15rem;
+      color:#7a6f8e;
+      text-align:right;
+      padding-top:6px;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+    .project-card{
+      min-height:310px;
+      display:flex;
+      flex-direction:column;
+    }
+    .project-card .numbers{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:auto;
+      padding-top:18px;
+    }
+    .stat{
+      background:white;
+      border:1px solid rgba(90,75,110,.14);
+      border-radius:14px;
+      padding:9px 11px;
+      font-size:.86rem;
+      font-weight:700;
+    }
+
+    .exposure-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .exposure{
+      background:white;
+      border:1.5px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      min-height:180px;
+      box-shadow:0 8px 24px rgba(80,67,100,.05);
+    }
+    .exposure .icon{
+      font-size:1.55rem;
+      margin-bottom:8px;
+      display:block;
+    }
+    .exposure h3{
+      font-family:"Patrick Hand",cursive;
+      font-size:1.5rem;
+      margin:0 0 8px;
+    }
+    .exposure p{font-size:.92rem; color:#645e70; margin:0;}
+    .exposure-foot{
+      margin-top:18px;
+      font-size:.9rem;
+      padding:16px 18px;
+      border-radius:16px;
+      background:var(--lav-2);
+      border:1px dashed #cfc2ec;
+    }
+
+    .edu-block{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:24px;
+    }
+    .subject-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .chip{
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(80,67,100,.12);
+      background:white;
+      font-size:.88rem;
+      font-weight:600;
+    }
+
+    .activity-list{
+      columns:2;
+      column-gap:28px;
+    }
+    .activity{
+      break-inside:avoid;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 18px;
+      margin-bottom:16px;
+      box-shadow:0 6px 18px rgba(80,67,100,.04);
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .skill-card h3{
+      font-family:"Patrick Hand",cursive;
+      font-size:1.7rem;
+      margin:0 0 12px;
+    }
+    .skill-card p{margin:0; color:#5f596d;}
+
+    .footer{
+      padding:70px 0 84px;
+      text-align:center;
+    }
+    .footer-box{
+      background:linear-gradient(135deg,var(--pink-2),var(--lav-2),var(--sky-2));
+      border:1.5px solid #d9d1e7;
+      border-radius:30px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+    .footer h2{
+      font-family:"Patrick Hand",cursive;
+      font-size:2.6rem;
+      margin:0 0 8px;
+    }
+    .footer p{margin:0 0 18px; color:#625c6e;}
+
+    .backtop{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      background:white;
+      border:1.5px solid #d8d2e2;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:var(--shadow);
+      font-family:"Schoolbell",cursive;
+      font-size:1.1rem;
+    }
+
+    @media (max-width: 940px){
+      .hero{grid-template-columns:1fr; min-height:auto; gap:38px; padding-top:56px;}
+      .portrait-wrap{margin:0 auto; width:min(80%,420px);}
+      .grid-2,.projects,.edu-block{grid-template-columns:1fr;}
+      .exposure-grid{grid-template-columns:1fr 1fr;}
+      .skills-grid{grid-template-columns:1fr;}
+      .timeline-item{grid-template-columns:1fr; gap:8px;}
+      .time{text-align:left;}
+    }
+    @media (max-width: 700px){
+      nav{position:relative;}
+      .nav-inner{align-items:flex-start;}
+      .nav-links{display:none;}
+      h1{font-size:4.4rem;}
+      section{padding:54px 0;}
+      .exposure-grid{grid-template-columns:1fr;}
+      .activity-list{columns:1;}
+      .portrait-wrap{width:92%;}
+    }
+  </style>
+</head>
+
+<body id="top">
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#top">sahana.sharma ✿</a>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#experience">experience</a>
+        <a href="#projects">projects</a>
+        <a href="#education">education</a>
+        <a href="#skills">skills</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">hello internet ☺ welcome to my little corner</div>
+        <h1>Sahana<br>Sharma</h1>
+        <p class="hero-sub">IBDP Student | Data Science, Economics & Entrepreneurship | Algoverse Machine Learning & AI Researcher</p>
+        <p class="hero-copy">
+          I like building things at the intersection of data, technology and business — from machine-learning research
+          and hackathon projects to startup operations, market research and web design.
+        </p>
+        <div class="contact-row">
+          <a class="btn primary" href="mailto:sahana2008lol@gmail.com">✉ email me</a>
+          <a class="btn" href="https://linkedin.com/in/sahana-sharma08" target="_blank" rel="noopener">↗ linkedin</a>
+          <span class="btn">⌖ Singapore</span>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="tape"></div>
+        <div class="portrait-card">
+          <img src="sahana-portrait.jpg" alt="Portrait of Sahana Sharma">
+          <div class="portrait-caption">data + business + building things ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-title"><h2>about me</h2><div class="scribble"></div></div>
+      <div class="profile-box">
+        I’m an IB Diploma student combining <strong>data science, economics and entrepreneurship</strong> through hands-on
+        research, startup operations and technology projects. I’m a Co-Founder of <strong>Solivia Pte. Ltd.</strong>, where
+        I built the company website, conduct market and commercial research, and support financial management. I’m also a
+        Machine Learning & AI Researcher with <strong>Algoverse</strong>, with experience in Python-based model evaluation,
+        data validation, Git/GitHub workflows and communicating technical findings. My recent professional exposure includes
+        job shadowing senior data analysts, software engineers, data scientists and sales leaders.
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title"><h2>experience + leadership</h2><div class="scribble"></div></div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="time">Current</div>
+          <article class="card pink">
+            <span class="mini-label">startup life ♡</span>
+            <h3>Co-Founder | Solivia Pte. Ltd.</h3>
+            <div class="meta">Singapore · Healthcare and medical-device startup</div>
+            <ul>
+              <li>Joined at inception and help build the operating foundation of a Singapore B2B startup serving healthcare distributors, hospitals and clinics.</li>
+              <li>Designed and launched <strong>solivia.life</strong>, structuring brand, company and product information for external stakeholders.</li>
+              <li>Conduct market sizing, competitor and pricing research, hospital procurement and tender analysis, and regional market research across Southeast Asia and Australia/New Zealand.</li>
+              <li>Support financial management through expense tracking, price and margin analysis, supplier/order cost modelling, budgeting and commercial scenario planning.</li>
+              <li>Contribute to supply-chain research, demand forecasting and business planning for sterile surgical packs, consumables, PPE, drapes and gowns.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">2026 — Present</div>
+          <article class="card lav">
+            <span class="mini-label">research mode ✦</span>
+            <h3>Machine Learning & AI Researcher | Algoverse</h3>
+            <div class="meta">International student research programme</div>
+            <ul>
+              <li>Collaborate internationally on a sequence-based machine-learning research project using image frames, 1,024-dimensional embeddings and x-y position targets.</li>
+              <li>Validate datasets by inspecting array shapes, data types, distributions and missing values, then prepare structured inputs for modelling and evaluation.</li>
+              <li>Research model architecture and attention-based approaches, document findings and translate technical results into clear research explanations.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">2025 — 2026</div>
+          <article class="card mint">
+            <span class="mini-label">people + ideas ☀</span>
+            <h3>Partnership Lead | Youth Circles</h3>
+            <div class="meta">UNESCO-supported Intercultural Leadership Programme</div>
+            <ul>
+              <li>Participated in intercultural leadership activities and youth discussions focused on collaboration, open-mindedness and constructive dialogue.</li>
+              <li>Supported group communication and youth engagement while developing public-speaking, facilitation and leadership skills.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title"><h2>selected projects</h2><div class="scribble"></div></div>
+      <div class="projects">
+        <article class="card sky project-card">
+          <span class="mini-label">July 2026 · hackathon</span>
+          <h3>FraudCrew — Agentic AI Fraud Evaluation</h3>
+          <div class="meta">NTT DATA / NUS / Microsoft Hackathon Project</div>
+          <ul>
+            <li>Developed and tested an evaluation workflow for a multi-agent fraud investigation system using Python and GitHub.</li>
+            <li>Evaluated 60 alerts containing 6 confirmed fraud cases: the system escalated 20 and cleared 40.</li>
+            <li>Added red-team test scenarios and submitted work through a feature branch and pull request.</li>
+          </ul>
+          <div class="numbers">
+            <span class="stat">100% fraud recall</span>
+            <span class="stat">30% precision</span>
+            <span class="stat">74% less false-positive workload</span>
+            <span class="stat">≈20 analyst hours saved</span>
+          </div>
+        </article>
+
+        <article class="card peach project-card">
+          <span class="mini-label">ongoing · passion project</span>
+          <h3>Educational Mathematics Game</h3>
+          <div class="meta">Independent Project</div>
+          <ul>
+            <li>Developing a game-based website that helps children aged 6–14 in children's homes practise and strengthen mathematics skills.</li>
+            <li>Define learner needs, learning objectives, game mechanics and accessible content.</li>
+            <li>Manage project milestones and development priorities while iterating the website experience.</li>
+          </ul>
+          <div class="numbers">
+            <span class="stat">web development</span>
+            <span class="stat">learning design</span>
+            <span class="stat">game mechanics</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="exposure">
+      <div class="section-title"><h2>professional exposure</h2><div class="scribble"></div></div>
+      <div class="exposure-grid">
+        <article class="exposure">
+          <span class="icon">⌁</span>
+          <h3>Data Analysts</h3>
+          <p>Problem definition, data cleaning, exploratory analysis, dashboarding and communicating evidence-based insights.</p>
+        </article>
+        <article class="exposure">
+          <span class="icon">⌨</span>
+          <h3>Software Engineers</h3>
+          <p>Development workflows, code review, testing, system design, debugging and cross-functional delivery.</p>
+        </article>
+        <article class="exposure">
+          <span class="icon">✦</span>
+          <h3>Data Scientists</h3>
+          <p>Translating business questions into modelling problems, feature selection, evaluation metrics and model limitations.</p>
+        </article>
+        <article class="exposure">
+          <span class="icon">↗</span>
+          <h3>Sales Leaders</h3>
+          <p>Customer discovery, pipeline management, solution positioning, stakeholder communication and business value.</p>
+        </article>
+      </div>
+      <div class="exposure-foot">
+        Career-exposure activities have included programmes or sessions associated with <strong>Pinterest, Snapchat, The Trade Desk and OpenAI.</strong>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-title"><h2>education</h2><div class="scribble"></div></div>
+      <div class="edu-block">
+        <article class="card lav">
+          <span class="mini-label">2026</span>
+          <h3>International Baccalaureate Diploma Programme</h3>
+          <div class="meta">Westbourne College Singapore · Singapore</div>
+          <p><strong>Higher Level</strong></p>
+          <div class="subject-list">
+            <span class="chip">Mathematics AA</span>
+            <span class="chip">Economics</span>
+            <span class="chip">Computer Science</span>
+          </div>
+          <p style="margin-top:18px;"><strong>Standard Level</strong></p>
+          <div class="subject-list">
+            <span class="chip">Business Management</span>
+            <span class="chip">English Language & Literature</span>
+            <span class="chip">Hindi</span>
+          </div>
+          <p style="margin-top:18px;">Academic interests include machine learning, economics, game theory, business strategy and applied data analysis.</p>
+        </article>
+
+        <article class="card pink">
+          <span class="mini-label">secondary education</span>
+          <h3>ACS International Singapore</h3>
+          <p style="margin-top:12px;">
+            Built a broad academic base before moving into the IB Diploma Programme, with growing interests in technology,
+            data, economics and business.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="section-title"><h2>competitions + activities</h2><div class="scribble"></div></div>
+      <div class="activity-list">
+        <div class="activity"><strong>Wharton Global High School Investment Competition</strong><br>2025–2026 participant in investment research, portfolio strategy and team decision-making.</div>
+        <div class="activity"><strong>Harvard Crimson Global Case Competition</strong><br>Applied structured problem-solving and business analysis to a case-based challenge.</div>
+        <div class="activity"><strong>Hack Club + technology hackathons</strong><br>Collaborative coding, rapid prototyping and project-based technology work.</div>
+        <div class="activity"><strong>Girls Who Code Pathways Programme</strong><br>Ongoing development in computer science, problem-solving, career readiness and women-in-STEM skills.</div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="section-title"><h2>learning right now</h2><div class="scribble"></div></div>
+      <div class="grid-2">
+        <article class="card mint">
+          <h3>Certifications + programmes</h3>
+          <ul>
+            <li>Python Bootcamp: Beginner to Master Programming</li>
+            <li>Python Project for Data Science</li>
+            <li>Youth Circles supported by UNESCO Intercultural Leadership Programme</li>
+          </ul>
+        </article>
+        <article class="card sky">
+          <h3>Ongoing professional development</h3>
+          <ul>
+            <li>Harvard CS50x: Introduction to Computer Science</li>
+            <li>Google AI Skills Track</li>
+            <li>IBM Data Science Skills learning pathway</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title"><h2>skills shelf</h2><div class="scribble"></div></div>
+      <div class="skills-grid">
+        <article class="card pink skill-card">
+          <h3>Technical</h3>
+          <p>Python, NumPy, data validation, exploratory data analysis, machine learning evaluation, AI fundamentals, attention mechanisms, Git, GitHub, basic web development and website content management.</p>
+        </article>
+        <article class="card mint skill-card">
+          <h3>Business + Research</h3>
+          <p>Market research, competitor analysis, pricing analysis, cost modelling, budgeting, financial tracking, demand forecasting, project planning and research writing.</p>
+        </article>
+        <article class="card lav skill-card">
+          <h3>Communication + Leadership</h3>
+          <p>Public speaking, presentation, stakeholder communication, teamwork, intercultural collaboration, time management and open-mindedness.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-box">
+        <div class="doodle" style="font-size:1.15rem;">thanks for stopping by ♡</div>
+        <h2>Want to connect?</h2>
+        <p>I’m interested in data, machine learning, economics, entrepreneurship and opportunities to build useful things.</p>
+        <div class="contact-row" style="justify-content:center;">
+          <a class="btn primary" href="mailto:sahana2008lol@gmail.com">sahana2008lol@gmail.com</a>
+          <a class="btn" href="https://linkedin.com/in/sahana-sharma08" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="backtop" href="#top" aria-label="Back to top">↑</a>
+</body>
+</html>
