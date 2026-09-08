@@ -1,0 +1,160 @@
+[
+  {
+    "name": "Working commercial system",
+    "intro": "Organise the evidence, make the calculations transparent, then connect the workflow.",
+    "steps": [
+      [
+        "Create the product and supplier database",
+        "Inventory the information Solivia actually possesses, then organise products, suppliers, prices, minimum order quantities, lead times, quotations and enquiries into linked SQL tables. Record units, currencies, sources and dates. Separate observed information from estimates, and create a sanitised dataset for the public demonstration.",
+        "Hard",
+        8,
+        12
+      ],
+      [
+        "Build the landed-cost and margin calculator",
+        "Calculate per-unit procurement, freight, insurance and other applicable variable costs without double-counting them. Calculate contribution margin and cash required. Document the assumptions behind each calculation, and manually check several examples against the system’s output.",
+        "Medium",
+        5,
+        8
+      ],
+      [
+        "Build the quotation scenario engine",
+        "Allow a user to select a product, quantity, destination, delivery basis and target margin. Return a calculated quotation, cost breakdown and expected contribution. Compare supplier pricing tiers and order quantities, flag missing inputs and show when a quotation fails the selected margin requirement.",
+        "Hard",
+        5,
+        8
+      ],
+      [
+        "Create the distributor and tender-opportunity tracker",
+        "Track each enquiry through quotation, documentation, purchase order, production and delivery stages. Include requested quantities, next actions, estimated deal value and expected timing. Clearly distinguish confirmed orders from opportunities; label conversion probabilities as assumptions rather than established facts.",
+        "Medium",
+        5,
+        8
+      ],
+      [
+        "Build the commercial-risk dashboard",
+        "Show supplier, distributor and product concentration, tender dependence, working-capital exposure and outstanding documentation. Define each indicator and explain what it measures. Keep actual sales concentration separate from projected pipeline concentration so the dashboard does not imply revenue that has not occurred.",
+        "Medium",
+        5,
+        8
+      ],
+      [
+        "Connect everything in an interactive scenario laboratory",
+        "Let users adjust quantities, supplier prices, freight, exchange rates and margins, then see the effects on quotations, contribution and cash requirements. Test the connected workflow with a Solivia stakeholder, check invalid inputs and correct usability problems. Keep confidential information out of the public demonstration.",
+        "Hard",
+        8,
+        12
+      ]
+    ]
+  },
+  {
+    "name": "Forecasting and procurement optimisation",
+    "intro": "Only forecast when the data supports evaluation. Compare decisions, not just models.",
+    "steps": [
+      [
+        "Decide whether the data is ready for forecasting",
+        "Review completed orders, available history, missing periods, product consistency and lead-time records. Decide which products can support genuine forecast evaluation. Where the evidence is insufficient, defer forecasting or use an explicitly labelled simulation, not a claimed prediction of Solivia’s sales.",
+        "Medium",
+        4,
+        6
+      ],
+      [
+        "Build and compare demand forecasts",
+        "Start with simple baselines, such as previous-period demand or a moving average. Add a more complex method only where justified. Evaluate predictions using later observations that were not used to fit the model, examine forecast errors and bias, and explain the model-selection decision.",
+        "Hard",
+        10,
+        16
+      ],
+      [
+        "Translate uncertainty into inventory rules",
+        "Estimate plausible demand and lead-time uncertainty. Use this to compare reorder points and safety-stock policies. Explain the trade-off between availability, excess stock and tied-up cash. Distinguish uncertainty estimated from observations from ranges chosen purely for scenario testing.",
+        "Hard",
+        8,
+        12
+      ],
+      [
+        "Build the constrained procurement optimiser",
+        "Define order quantities as decision variables and choose a clearly stated objective, such as expected contribution after relevant inventory costs. Add supported constraints: budget, minimum order quantities, storage or supplier restrictions. Test whether the recommendations are feasible and whether the model handles cases with no feasible solution.",
+        "Hard",
+        12,
+        20
+      ],
+      [
+        "Stress-test the procurement policies",
+        "Compare the optimiser against simpler ordering rules under the same demand and supplier scenarios. Use scenario analysis and, where justified, Monte Carlo simulation to vary demand, delays, freight and tender outcomes. Compare contribution, stockouts, excess inventory and cash exposure, not just forecast accuracy.",
+        "Hard",
+        10,
+        16
+      ],
+      [
+        "Integrate and validate the recommendations",
+        "Add forecasts, inventory rules and procurement comparisons to the application. Show assumptions and uncertainty beside each recommendation. Review results with a Solivia stakeholder, investigate unrealistic outputs and record changes. Distinguish simulated improvements from any benefits observed during actual use.",
+        "Hard",
+        6,
+        10
+      ]
+    ]
+  },
+  {
+    "name": "Written technical case study",
+    "intro": "Make the reasoning reproducible and keep every conclusion proportional to the evidence.",
+    "steps": [
+      [
+        "Explain the business problem",
+        "State which pricing, quotation or procurement decisions the system supports, who will use it and what the project aims to improve. Define the boundaries clearly: this is a commercial decision-support tool, not a clinical recommendation system.",
+        "Easy",
+        1,
+        2
+      ],
+      [
+        "Describe the existing workflow",
+        "Explain how Solivia currently handles supplier information, quotations, enquiries and purchasing decisions. Use stakeholder input and available records to identify genuine difficulties. Do not invent inefficiencies simply to make the new system appear useful.",
+        "Medium",
+        1,
+        2
+      ],
+      [
+        "Document the data design",
+        "Explain the database structure, relationships, sources, cleaning decisions and confidentiality measures. Include a compact schema diagram or data dictionary. Identify which fields are observed, estimated or simulated and explain any important missing information.",
+        "Medium",
+        1,
+        2
+      ],
+      [
+        "Explain the decision methodology",
+        "Present the important cost and margin calculations, assumptions and scenario logic. Include forecasting, inventory and optimisation methods only if implemented. Reference methodological sources and justify why the chosen methods fit the available data and business problem.",
+        "Hard",
+        2,
+        3
+      ],
+      [
+        "Describe the system design",
+        "Show how the database, calculation engine and interface connect. Explain the main user workflow, input checks and separation between private company data and the public demonstration. Include a readable architecture diagram and selected screenshots.",
+        "Medium",
+        1,
+        2
+      ],
+      [
+        "Demonstrate one complete commercial scenario",
+        "Walk through an anonymised quotation or procurement decision: inputs → calculations → alternatives → output → interpretation. Explain how changing one important assumption changes the decision. Identify clearly whether the example is real, anonymised or synthetic.",
+        "Medium",
+        2,
+        3
+      ],
+      [
+        "Evaluate results and business value",
+        "Report what testing actually established: calculation accuracy, consistent quotations, clearer comparisons, stakeholder feedback or measured task-time changes. Where Phase 2 is completed, report comparisons against baseline policies. Do not claim revenue gains or cost savings without supporting evidence.",
+        "Hard",
+        2,
+        3
+      ],
+      [
+        "Discuss limitations and finish the report",
+        "Explain missing data, uncertain assumptions, model weaknesses and remaining development needs. State what is operational versus experimental. Finalise references, captions and reproducibility links; check that every conclusion matches the evidence and that the report contains no confidential information.",
+        "Medium",
+        2,
+        4
+      ]
+    ]
+  }
+]
